@@ -60,8 +60,6 @@ class BlogController extends Controller
         $post = Post::find($id);
         $post->update($request->all());
 
-        return view('single', [
-            'post' => $post
-        ]);
+        return redirect(URL::route('route.single', ['id' => $post->id]));
     }
 }
