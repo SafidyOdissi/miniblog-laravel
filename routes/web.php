@@ -19,3 +19,5 @@ Route::get('/blog/{id}', [BlogController::class, 'one'])->where('id', '[1-9]+')-
 Route::get('/add', [BlogController::class, 'add'])->name('blog.add');
 Route::post('/store', [BlogController::class, 'store'])->name('blog.store');
 Route::get('/delete/{id}', [BlogController::class, 'remove'])->where('id', '[1-9]+')->name('blog.delete');
+Route::get('/edit/{id}', [BlogController::class, 'edit'])->where('id', '[1-9]+')->name('blog.edit');
+Route::put('/update/{id}', [BlogController::class, 'update'])->where('id', '[1-9]+')->name('blog.update');

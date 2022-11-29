@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterPostRequest;
+use App\Http\Requests\UpdatePost;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -45,5 +46,22 @@ class BlogController extends Controller
     {
         Post::find($id)->delete();
         return redirect(URL::route('route.home'));
+    }
+    public function edit(Request $request, string $id)
+    {
+        # code...
+        $post = Post::find($id);
+        return view('new', [
+            'post' => $post
+        ]);
+    }
+    public function update(UpdatePost $request, string $id)
+    {
+        $post = Post::find($id);
+        $post->update($request->all());
+
+        return view('single', [
+            'post' => $post
+        ]);
     }
 }

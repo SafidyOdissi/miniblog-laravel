@@ -10,11 +10,18 @@
         <a href="#!">Start Bootstrap</a>
         on September 18, 2022
     </p>
-    <a
-        class="btn btn-danger"
-        href="{{URL::route('blog.delete',['id'=>$post['id']])}}"
-        >Delete</a
-    >
+    <div class="d-flex align-items-center">
+        <a
+            class="btn btn-danger"
+            href="{{URL::route('blog.delete',['id'=>$post['id']])}}"
+            >Delete</a
+        >
+        <a
+            class="btn btn-primary"
+            href="{{URL::route('blog.edit',['id'=>$post['id']])}}"
+            >Edit</a
+        >
+    </div>
 </div>
 <!-- Divider-->
 <hr class="my-4" />
