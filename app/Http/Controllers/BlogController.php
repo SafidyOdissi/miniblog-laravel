@@ -16,15 +16,14 @@ class BlogController extends Controller
     }
     public function list()
     {
-        $posts = Post::all()->toArray();
+        $posts = Post::all();
         return view('blog', [
             'posts' => $posts
         ]);
     }
     public function one(Request $request, string $id)
     {
-        $post = Post::find($id)->toArray();
-        // $posts = Post::all()->where('id', '=', )->toArray();
+        $post = Post::find($id);
         return view('single', [
             'post' => $post
         ]);
