@@ -35,6 +35,16 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
+        @if (isset($categories))
+            <div class="form-group">
+                <label for="content-post">Category</label>
+                <select name="categorie" id="select_category">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        @endif
         @if (isset($post->created_at))
             <div class="form-group">
                 <label for="content-post">Contenues de votre Article</label>
