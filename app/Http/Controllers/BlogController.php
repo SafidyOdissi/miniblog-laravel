@@ -6,11 +6,21 @@ use App\Http\Requests\RegisterPostRequest;
 use App\Http\Requests\UpdatePost;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 
 class BlogController extends Controller
 {
+    public function index()
+    {
+        User::create([
+            'name' => 'Jonathan',
+            'email' => 'boyer@grafikart.fr',
+            'password' => '123@2022azerty'
+        ]);
+        return response('User Created');
+    }
 
     public function list()
     {

@@ -4,7 +4,6 @@
     <h1>{{ $post->title }}</h1>
     <h4>{{ $post->sub_title }}</h4>
     <p>{{ $post->content }}</p>
-
     <hr>
     @foreach ($post->comments as $comment)
         <div>
